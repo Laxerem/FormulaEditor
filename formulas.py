@@ -1,9 +1,9 @@
-from Main import forms
 forms = []
 value = []
 naity = []
 itog_form = []
-formulus = ["C = p * b", "C = u / b"]
+vozm_form = []
+formulus = ["C = p * b", "C = u / b", "N = i * m"]
 char = str
 
 
@@ -22,19 +22,37 @@ def get_arrs(povtor):
             if get_forms[char_index].isdigit():
                 count += get_forms[char_index]
             char_index += 1
-        value.append(count)
+        value.append(int(count))
     return forms, value
 
 
-def get_formulus(col_naity):
-    a = True
+
+def get_vozm_formulus():
     for string in formulus:
         for char in string:
-            if char.isalpha and char in forms:
-                continue
-            else:
-                a = False
+            if char == "=":
                 break
+            if char.isalpha and char in naity:
+                vozm_form.append(string)
+    return vozm_form
+
+
+def get_itog_formulus():
+    get_vozm_formulus()
+    for string in vozm_form:
+        a = True
+        b = False
+        for char in string:
+            if char == "=":
+                b = True
+            if b == True:
+                if char.isalpha() and char in forms:
+                    continue
+                elif char.isalpha() and char not in forms:
+                    a = False
+                    break
         if a == True:
-            itog_form.append(string)
+            itog_form.append(string)за
     return itog_form
+
+
