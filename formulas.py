@@ -52,7 +52,7 @@ def get_itog_formulus():
                     a = False
                     break
         if a == True:
-            itog_form.append(string)за
+            itog_form.append(string)
     return itog_form
 
 
