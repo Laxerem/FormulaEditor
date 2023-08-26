@@ -1,3 +1,5 @@
+import formulas
+
 from formulas import get_arrs, get_itog_formulus, get_otvet, forms, value, naity, itog_form, vozm_form, otvet_dict, operato, dict
 
 
